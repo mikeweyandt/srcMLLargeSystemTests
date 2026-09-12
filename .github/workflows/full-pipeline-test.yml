@@ -54,13 +54,13 @@ jobs:
           sudo apt-get install -y \
             antlr libantlr-dev libantlr-java \
             libarchive-dev libcurl4-openssl-dev \
+            libxcb1-dev \
             libxml2-dev libxml2-utils libxslt1-dev \
             cmake ninja-build g++ dpkg-dev
 
       - name: Run cmake ci-ubuntu workflow preset
         id: cmake_workflow
         working-directory: srcML
-        continue-on-error: true
         run: |
           set -euxo pipefail
           cmake --workflow --preset ci-ubuntu
